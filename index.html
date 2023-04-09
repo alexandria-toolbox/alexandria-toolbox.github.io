@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Alexandria - The library of Bayesian time-series models</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+<link href="css/coda-slider.css" rel="stylesheet" type="text/css" charset="utf-8" />
+
+<script src="js/jquery-1.2.6.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
+<script src="js/jquery.localscroll-1.2.5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.serialScroll-1.2.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/coda-slider.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	
+    <div id="slider">
+    <div id="tooplate_wrapper">
+    	
+        <div id="tooplate_sidebar">
+        
+            <div id="header">
+                <h1><a href="#"><img src="images/alexandria_logo.png" alt="alexandria website" title="alexandria official website" /></a></h1>
+            </div>    
+			
+            <div id="menu">
+                <ul class="navigation">
+                    <li><a href="#home" class="selected menu_01">Home</a></li>
+                    <li><a href="#about" class="menu_02">About</a></li>
+                    <li><a href="#getting_started" class="menu_03">Getting started</a></li>
+                    <li><a href="#gallery" class="menu_04">Gallery</a></li>
+                    <li><a href="downloads" class="menu_06">Downloads</a></li>
+                    <li><a href="#contact" class="menu_05">Contact</a></li> 
+                </ul>
+            </div>
+		</div> <!-- end of sidebar -->
+    
+        <div id="content">
+            <div class="scroll">
+                <div class="scrollContainer">
+                
+                    <div class="panel" id="home">
+                    	<div class="content_section">
+                            <h2>A library for Bayesian econometrics</h2>    
+                            
+                            <img src="images/alexandria_image_01.jpeg" alt="Image 01" class="image_wrapper image_fl" />
+                            
+                            <p>Welcome to the official Alexandria website. Alexandria is a toolbox dedicated to Bayesian time-series econometrics models, developed jointly in Python and Matlab. </p>  
+                            
+                            <br> <br>
+                            
+                            <p>On this website you will find an overview of the toolbox, along with links to download the software and its manuals for free.</p> 
+                            
+                            <p><em><strong>Latest news:</strong> Alexandria V 0.1 is now released! It can be downloaded along with its manuals in the download sections of the website.</em></p>
+                            
+                         </div>
+                         <div class="content_section last_section">   
+                         	<h2>Technologies</h2>
+                                <ul class="service_list col_200 float_l">
+                                    <li><a class="service_four">Python</a></li>
+                                    <li><a class="service_two">Github</a></li>
+                                </ul>
+                                <ul class="service_list col_200 image_fr">
+	                                <li><a class="service_one">Matlab</a></li> 
+                                    <li><a class="service_five">Latex</a></li>  
+								</ul>
+						</div>
+                    </div> <!-- end of home -->
+                    
+                    <div class="panel" id="about">
+                    	<div class="content_section">
+                            <h1>Romain Legrand</h1>
+                            <img src="images/personal_picture.jpeg" alt="Image 02" class="image_wrapper image_fl" />
+                            <p>Skilled economist, econometrician, quantitative researcher and data scientist with a passion for modelling and quantitative methods. I am the creator, developer and owner of Alexandria. </p>  
+                            
+                            <br> <br>
+
+                            <p>I hold A PhD in economics from Cergy Paris University (2014) and a Master's degree in Big Data from Telecom Paris (2020). I  have worked as an economist and econometrician for the European Central Bank during four years (2014-2018). There I developed the BEAR toolbox, which is the Matlab ancestor of Alexandria. I now work as a quantitative researchr for Qube Research and Technologies, one of the most succesful hedge funds in France.</p>                           
+                            
+						</div>
+                        <div class="content_section last_section">
+							<h2>More about me</h2>
+                            <p>For more information, you can download 
+                            <a href="documents/resume_romain_legrand.pdf" download> my resume </a> or visit my <a href="https://www.linkedin.com/in/romain-legrand-quant/">Linkedin page</a>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="panel" id="services">
+                        <h1>Getting started</h1>
+                        <p>Python install: <em style="color:#9E4801"> pip install alexandria-python</em> </p>
+                        <p>Then (simple Bayesian regression model):</p>
+                        <p><em style="color:#9E4801"> from alexandria.linear_regression import SimpleBayesianRegression <br>
+                        from alexandria.datasets import data_sets as ds <br> <br>
+                        # load Taylor rule toy dataset (federal funds rate, inflation, output gap) <br>
+                        taylor_data = ds.load_taylor() <br>
+                        y, X = taylor_data[:,0], taylor_data[:,1:] <br> <br>
+                        # train the model with default settings <br>
+                        sbr = SimpleBayesianRegression(endogenous=y, exogenous=X) <br>
+                        sbr.estimate() <br> <br>
+                        # get predictions, run forecast evaluation, display log score <br>
+                        estimates_forecasts = sbr.forecast(X, 0.95) <br>
+                        sbr.forecast_evaluation(y) <br>
+                        print(sbr.forecast_evaluation_criteria['log_score'])
+                        </em></p>
+                        <p>Console output: 2.2505</p>
+                    </div>
+                
+                    <div class="panel" id="gallery">
+                        <h1>Gallery</h1>
+                        
+                        <ul id="gallery_container">
+                            <li><a href="#"><img id="image_01" src="images/gallery/image_01.jpeg" alt="Graphical user Interface, model selection tab" style="width:100%;max-width:220px"/></a></li>
+                            <li><a href="#"><img id="image_02" src="images/gallery/image_02.jpeg" alt="Graphical user Interface, prior specification tab" style="width:100%;max-width:220px"/></a></li>
+                            <li><a href="#"><img id="image_03" src="images/gallery/image_03.jpeg" alt="Estimation summary on console" style="width:100%;max-width:220px"/></a></li>
+                            <li><a href="#"><img id="image_04" src="images/gallery/image_04.jpeg" alt="Graphical output: actual and fitted" style="width:100%;max-width:220px"/></a></li>
+                            <li><a href="#"><img id="image_05" src="images/gallery/image_05.jpeg" alt="Graphical output: predictions and credibility bands" style="width:100%;max-width:220px"/></a></li>
+                            <li><a href="#"><img id="image_06" src="images/gallery/image_06.jpeg" alt="Bayesian Time-Series Econometrics, books 1,2 and 3" style="width:100%;max-width:220px"/></a></li>
+						</ul>
+                        
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                      <span class="close">&times;</span>
+                      <img class="modal-content" id="img01">
+                      <div id="caption"></div>
+                    </div>
+                        
+                    <script>
+                    // for image 01
+                    var modal = document.getElementById("myModal");
+                    var img = document.getElementById("image_01");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>
+                    
+                    <script>
+                    // for image 02
+                    var modal2 = document.getElementById("myModal");
+                    var img = document.getElementById("image_02");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>      
+                 
+                    <script>
+                    // for image 03
+                    var modal3 = document.getElementById("myModal");
+                    var img = document.getElementById("image_03");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>                          
+                        
+                    <script>
+                    // for image 04
+                    var modal4 = document.getElementById("myModal");
+                    var img = document.getElementById("image_04");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>                         
+                        
+                    <script>
+                    // for image 05
+                    var modal5 = document.getElementById("myModal");
+                    var img = document.getElementById("image_05");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>                        
+
+                    <script>
+                    // for image 06
+                    var modal5 = document.getElementById("myModal");
+                    var img = document.getElementById("image_06");
+                    var modalImg = document.getElementById("img01");
+                    var captionText = document.getElementById("caption");
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() { 
+                    modal.style.display = "none";
+                    }
+                    </script>  
+                    </div>
+                
+                    <div class="panel" id="downloads">
+                    	<div class="content_section">
+                         	<h2>Toolbox</h2>
+                            <p>The local installs for the latest release of Alexandria,  Python and Matlab editions, as zip files. You can also download these files from the <a href="https://github.com/alexandria-toolbox">Github repo</a> of the toolbox. </p> 
+                            <ul class="service_list">
+                                <li><a href="documents/alexandria-python.zip" download class="service_three"> Alexandria V 0.1 - Python edition </a></li>
+                                <li><a href="documents/alexandria-matlab.zip" download class="service_three"> Alexandria V 0.1 - Matlab edition </a></li>
+                            </ul>
+                         </div>
+                         <div class="content_section last_section">   
+                         	<h2>Manuals</h2>
+                            <ul class="service_list">
+                                <li><a href="documents/book_1.pdf" download class="service_six">Bayesian time-series econometrics - Book 1: theory</a></li>
+                                <li><a href="documents/book_2.pdf" download class="service_seven">Bayesian time-series econometrics - Book 2: algebraic derivations</a></li>
+                                <li><a href="documents/book_3.pdf" download class="service_eight">Bayesian time-series econometrics - Book 3: mathematical background</a></li>
+                                <li><a href="documents/user_guide.pdf" download class="service_nine">Alexandria - User Guide</a></li>   
+                            </ul>
+						</div>
+                    </div> <!-- end of home -->                    
+                    
+                    <div class="panel" id="contact">
+                        <h1>Contact</h1>
+            
+                        <p>You can contact me with the following form, or directly by sending an email to <a href = "mailto: alexandria.toolbox@gmail.com">alexandria.toolbox@gmail.com</a>.</p>
+                        
+                        <div class="cleaner_h10"></div>
+                                                
+                        <div class="col_380 float_l">
+                            <div id="contact_form">
+                                <form method="post" name="contact" action="https://formsubmit.co/7b877d636b4545fa6e6e35507c40bf55">
+					
+									<label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
+									<div class="cleaner_h10"></div>
+																
+									<label for="email">Email:</label> <input type="text" class="validate-email required input_field" name="email" id="email" />
+									<div class="cleaner_h10"></div>
+														
+									<label for="subject">Subject:</label> <input type="text" class="validate-subject required input_field" name="subject" id="subject"/>
+									<div class="cleaner_h10"></div>
+										
+									<label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
+									<div class="cleaner_h10"></div>				
+															
+									<input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l" />
+									<input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r" />
+									
+								</form>
+                            </div>
+                        </div>
+                        
+                        <div class="col_380 float_r">
+                        
+                        </div>
+                    </div>                    
+                    
+                </div>
+            </div>
+            <!-- end of scroll -->
+        </div>
+        <div class="cleaner"></div>
+    </div> <!-- end of content -->
+    <div class="cleaner"></div>
+</div>
+
+<div id="footer">
+    
+        <div id="social_box">
+            <a href="https://www.youtube.com/channel/UCJVXFr903EPSJ9Pn1RK2uaQ"><img src="images/youtube.png" alt="youtube" /></a>
+            <a href="https://odysee.com/@alexandria-toolbox:a"><img src="images/odysee.png" alt="odysee" /></a>
+            <a href="https://github.com/alexandria-toolbox"><img src="images/github.png" alt="github" /></a>
+            <a href="https://www.linkedin.com/in/romain-legrand-quant/"><img src="images/linkedin.png" alt="linkedin" /></a>
+        </div>
+    
+        <a>Copyright © 2022 Romain Legrand</a>
+		
+</div>
+
+</body>
+</html>
