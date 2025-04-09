@@ -102,9 +102,8 @@
 			# create and train Bayesian VAR with default settings <br>
 			var = NormalWishartBayesianVar(endogenous = islm_data) <br>
 			var.estimate() <br> <br>
-			# estimate forecasts for the next 4 periods, 60% credibility level <br>
-			forecast_estimates = var.forecast(4, 0.6) <br> <br>
-			# create graphics of predictions <br>
+			# estimate and plot forecasts for the next 4 periods, 60% credibility level <br>
+			forecast_estimates = var.forecast(4, 0.6) <br>
 			gp = Graphics(var) <br>
 			gp.forecast_graphics(show=True, save=False)
                         </em></p>
