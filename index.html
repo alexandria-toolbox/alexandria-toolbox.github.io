@@ -55,7 +55,7 @@
                             
                             <p>On this website you will find an overview of the toolbox, along with links to download the software and its manuals for free.</p> 
                             
-                            <p><em><strong>Latest news:</strong> Alexandria V 0.1 is now released! It can be downloaded along with its manuals in the download sections of the website.</em></p>
+                            <p><em><strong>Latest news:</strong> Alexandria V 1.0 is now released! It can be downloaded along with its manuals in the download sections of the website.</em></p>
                             
                          </div>
                          <div class="content_section last_section">   
@@ -92,21 +92,23 @@
                     <div class="panel" id="services">
                         <h1>Getting started</h1>
                         <p>Python install: <em style="color:#9E4801"> pip install alexandria-python</em> </p>
-                        <p>Then (simple Bayesian regression model):</p>
-                        <p><em style="color:#9E4801"> from alexandria.linear_regression import SimpleBayesianRegression <br>
-                        from alexandria.datasets import data_sets as ds <br> <br>
-                        # load Taylor rule toy dataset (federal funds rate, inflation, output gap) <br>
-                        taylor_data = ds.load_taylor() <br>
-                        y, X = taylor_data[:,0], taylor_data[:,1:] <br> <br>
-                        # train the model with default settings <br>
-                        sbr = SimpleBayesianRegression(endogenous=y, exogenous=X) <br>
-                        sbr.estimate() <br> <br>
-                        # get predictions, run forecast evaluation, display log score <br>
-                        estimates_forecasts = sbr.forecast(X, 0.95) <br>
-                        sbr.forecast_evaluation(y) <br>
-                        print(sbr.forecast_evaluation_criteria['log_score'])
+                        <p>Then (simple Bayesian VAR with normal-Wishart prior):</p>
+			<p><em style="color:#9E4801"> from alexandria import NormalWishartBayesianVar <br>
+			from alexandria import DataSets <br>
+			from alexandria import Graphics <br>
+			import numpy as np <br> <br>
+			# load ISLM dataset <br>
+			ds = DataSets() <br>
+			islm_data = ds.load_islm()[:,:4] <br> <br>
+			# create and train Bayesian VAR with default settings <br>
+			var = NormalWishartBayesianVar(endogenous = islm_data) <br>
+			var.estimate() <br> <br>
+			# estimate forecasts for the next 4 periods, 60% credibility level <br>
+			forecast_estimates = var.forecast(4, 0.6) <br> <br>
+			# create graphics of predictions <br>
+			gp = Graphics(var) <br>
+			gp.forecast_graphics(show=True, save=False)
                         </em></p>
-                        <p>Console output: 2.2505</p>
                     </div>
                 
                     <div class="panel" id="gallery">
